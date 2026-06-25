@@ -1,16 +1,46 @@
-# React + Vite
+# Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-featured task management app built with React. Add, complete, and delete tasks — everything persists across page refreshes.
 
-Currently, two official plugins are available:
+**Live demo:** https://task-manager-fawn-kappa.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What it does
 
-## React Compiler
+- Add new tasks
+- Mark tasks as complete (with strikethrough)
+- Delete tasks
+- Tasks persist after refresh using localStorage
+- Empty state message when no tasks exist
+- Handles edge cases (empty/whitespace-only input)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## What I used
 
-## Expanding the ESLint configuration
+- React (components, props, useState, useEffect)
+- Tailwind CSS
+- localStorage for persistence
+- Deployed on Vercel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## What I learned
+
+- Lifting state up to a common parent so sibling components can share data
+- Passing functions down as props to let child components update parent state
+- Using two separate useEffect hooks — one to load saved data on mount, one to save on every change
+- Debugging a real timing bug where the save effect ran before the load effect finished, overwriting saved data
+- Styling a React app with Tailwind CSS
+- Deploying a Vite + React app to Vercel
+
+## How to run it locally
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/17adarshdash-commits/task-manager.git
+   cd task-manager
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the dev server:
+   ```bash
+   npm run dev
+   ```
