@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import TaskInput from './TaskInput';
 import TaskList from './TaskList';
 
+
 export default function App() {
 
   const [tasks, setTasks] = useState([]);
@@ -48,10 +49,10 @@ export default function App() {
       <h1 className="text-2xl font-bold mb-4 text-gray-800">My Tasks</h1>
       
       <TaskInput onAddTask={addTask} />
-      <TaskList 
-        tasks={tasks} 
-        onToggle={toggleTask} 
-        onDelete={deleteTask} 
+      <TaskList
+        tasks={tasks}
+        onToggle={toggleTask}
+        onDelete={deleteTask}
       />
     </div>
   );
